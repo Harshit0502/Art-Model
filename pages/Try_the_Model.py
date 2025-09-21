@@ -6,6 +6,7 @@ from pathlib import Path
 import joblib, json
 from ultralytics import YOLO
 from PIL import Image
+from model_wrapper import ArtMarketModel
 
 # --- Page Config ---
 st.set_page_config(page_title="Try the Model", layout="wide")
@@ -71,3 +72,14 @@ if uploaded_files:
         "predictions.csv",
         "text/csv"
     )
+wrapper = ArtMarketModel(
+    clf_weights="best.pt",
+    price_model_path="rf_price.joblib",
+    fallback_prices=json.load(open("fallback_prices.json")),
+    explanations={
+        "gond painting": "Heritage Folk Art — narrative motifs...",
+        "warli painting": "Tribal minimalism...",
+        # ... (rest of your MARKET_EXPLANATION dict)
+    }
+)
+wrapper.load()
