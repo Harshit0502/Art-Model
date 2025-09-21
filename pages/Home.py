@@ -59,9 +59,7 @@ with st.container():
     st.markdown("""
     **Dataset → Preprocessing → Training → Price Model → Inference → Market Insight**
     """)
-
-    # Example workflow image placeholder (replace with your diagram later)
-    st.image("flowchart.png", caption="Pipeline Overview", use_container_width=True)
+    st.image("1.jpg", caption="Pipeline Overview", use_container_width=True)
 
 # --- Section 4: Key Features ---
 with st.container():
