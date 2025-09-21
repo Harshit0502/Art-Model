@@ -61,7 +61,7 @@ with st.container():
     """)
 
     # Example workflow image placeholder (replace with your diagram later)
-    st.image("1.jpg", caption="Pipeline Overview", use_container_width=True)
+    st.image("flowchart.png", caption="Pipeline Overview", use_container_width=True)
 
 # --- Section 4: Key Features ---
 with st.container():
